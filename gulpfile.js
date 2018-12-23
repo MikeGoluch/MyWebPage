@@ -84,8 +84,8 @@ gulp.task('watch', function() {
       baseDir: './'
     }
   });
-  gulp.watch(paths.styles.src, style);
-  gulp.watch('*.html', reload);
+  gulp.watch(paths.styles.src, gulp.series('style'));
+  gulp.watch('*.html', gulp.series('reload'));
   // gulp.watch(paths.js, ['lint', 'scripts']);
 });
 
