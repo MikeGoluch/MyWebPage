@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Michał Gołuch | Front End Developer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
+    <link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+</head>
+<body>
+    <div class="wrapper">
+        <div class="box-header">
+            <div class="logo">
+                <a href="image"  aria-label="logo" class="logo">
+                    <img src="image" alt="logo image" class="nav-logo">
+                </a>
+            </div>
+            <div class="my-navbar">
+                <ul>
+                    <li class="home-button">
+                        <a href="#">
+                            <p>HOME</p>
+                        </a>
+                    </li>
+                    <li class="about-me-button">
+                        <a href="">
+                            <p>ABOUT ME</p>
+                        </a>
+                    </li>
+                    <li class="projects-button">
+                        <a href="">
+                            <p>PROJECTS</p>
+                        </a>
+                    </li>
+                    <li class="contact-button">
+                        <a href="">
+                            <p>CONTACT</p>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="box-main">
+            <div class="box-home-nested">
+                <h1>MICHAŁ GOŁUCH</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit, laborum?</p>
+            </div>
+            <div id="about_me" class="box-about-me-nested">
+                <h1>ABOUT ME</h1>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, cupiditate!</p>
+            </div>
+            <div class="my-skills">
+                <h1>MY SKILLS</h1>
+                <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Illum, ad.</p>
+            </div>
+            <div id="projects" class="box-projects-nested">
+                <h1>MY PROJECTS</h1>
+            </div>
+            <div id="contact" class="box-contact-nested">
+                <h1>CONTACT ME</h1>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <p>goluch.michal89@gmail.com</p>
+                <form action="https://formspree.io/goluch.michal89@gmail.com" method="POST">
+                    <div>
+                        <label for="name">Name:</label>
+                        <input type="text" placeholder="John Smith" name="firstname" required>
+                    </div>
+                    <div>
+                        <label for="mail">E-mail:</label>
+                        <input type="text" placeholder="example@domain.com" name="email" required>
+                    </div>
+                    <div>
+                        <label for="msg">Message:</label>
+                        <textarea id="msg" placeholder="Enter your message here" rows="5" name="user_message" required></textarea>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="box-footer">
+            <a href="https://www.linkedin.com/in/micha%C5%82-g-044626162/" class="linkedin">
+                <i class="fab fa-linkedin"></i>
+            </a>
+            <a href="https://github.com/MikeGoluch" class="github">
+                <i class="fab fa-github-square"></i>
+            </a>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+</body>
+</html>
