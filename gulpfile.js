@@ -21,8 +21,8 @@ var htmlclean = require('gulp-htmlclean');
 
 var paths = {
   styles: {
-    src: 'styles/scss/*.scss',
-    dest: 'styles/css/',
+    src: 'src/scss/*.scss',
+    dest: 'src/css/',
     js: 'js/*.js',
     out: 'build/img/',
     html: 'build/'
@@ -71,7 +71,7 @@ gulp.task('style', function() {
     // .pipe(postcss([autoprefixer(), cssnano()]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.styles.dest))
-    .pipe(browserSync.stream());
+    // .pipe(browserSync.stream());
 });
 
 gulp.task('reload', function() {
@@ -79,11 +79,11 @@ gulp.task('reload', function() {
 });
 
 gulp.task('watch', function() {
-  browserSync.init({
-    server: {
-      baseDir: './'
-    }
-  });
+  // browserSync.init({
+  //   server: {
+  //     baseDir: './'
+  //   }
+  // });
   gulp.watch(paths.styles.src, gulp.series('style'));
   gulp.watch('*.html', gulp.series('reload'));
   // gulp.watch(paths.js, ['lint', 'scripts']);
