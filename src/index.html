@@ -4,6 +4,7 @@
     <meta charset="utf-8" />
     <title>Michał Gołuch | Front End Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
     <link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
@@ -12,34 +13,49 @@
     <div class="wrapper">
         <div class="box-header">
             <div class="logo">
-                <a href="image"  aria-label="logo" class="logo">
-                    <img src="image" alt="logo image" class="nav-logo">
+                <a href="#"  aria-label="logo" class="logo">
+                    <img src="img/icons/logo_icon.png" alt="logo image" class="nav-logo">
                 </a>
             </div>
-            <div class="my-navbar">
-                <ul>
-                    <li class="home-button">
-                        <a href="#">
-                            <p>HOME</p>
-                        </a>
-                    </li>
-                    <li class="about-me-button">
-                        <a href="#about_me">
-                            <p>ABOUT ME</p>
-                        </a>
-                    </li>
-                    <li class="projects-button">
-                        <a href="#projects">
-                            <p>PROJECTS</p>
-                        </a>
-                    </li>
-                    <li class="contact-button">
-                        <a href="#contact">
-                            <p>CONTACT</p>
-                        </a>
-                    </li>
-                </ul>
+            
+            <!--Navbar-->
+        <nav class="navbar navbar-light light-blue lighten-4">
+
+            <!-- Collapse button -->
+            <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
+            aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
+            <div class="animated-icon4"><span></span><span></span><span></span></div>
+            </button>
+        
+            <!-- Collapsible content -->
+            <div class="collapse navbar-collapse" id="navbarSupportedContent22">
+        
+            <!-- Links -->
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active">
+                <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">About me</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Projects</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link" href="#">Contact</a>
+                </li>
+            </ul>
+            <!-- Links -->
+        
             </div>
+            <!-- Collapsible content -->
+        
+        </nav>
+        <!--/.Navbar-->
+            
+
+            
+        
         </div>
         <div class="box-main">
             <div class="box-home-nested">
@@ -53,36 +69,36 @@
             <div class="my-skills">
                 <h1>MY SKILLS</h1>
                 <div>
-                    <i class="fab fa-html5"></i>
+                    <img src="img/icons/html5_icon.png" alt="html5 icon">
                     <p>HTML5</p>
                 </div>
                 <div>
-                    <i class="fab fa-css3-alt"></i>
+                    <img src="img/icons/css3_icon.png" alt="css3 icon">
                     <p>CSS3</p>
                 </div>
                 <div>
-                    <i class="fab fa-html5"></i>
+                    <img src="img/icons/rwd_icon.png" alt="rwd icon">
                     <p>RWD</p>
                 </div>
                 <div>
-                    <i class="fab fa-html5"></i>
+                    <img src="img/icons/bootstrap_icon.png" alt="bootstrap icon">
                     <p>BOOTSTRAP</p>
                 </div>
                 <div>
-                    <i class="fab fa-html5"></i>
+                    <img src="img/icons/js_icon.png" alt="javascript icon">
                     <p>JAVASCRIPT</p>
                 </div>
                 <div>
-                    <i class="fab fa-html5"></i>
+                    <img src="img/icons/jquery_icon.png" alt="jquery icon">
                     <p>JQUERY</p>
                 </div>
                 <div>
-                    <i class="fab fa-html5"></i>
+                    <img src="img/icons/sass_icon.png" alt="sass icon">
                     <p>SASS</p>
                 </div>
                 <div>
-                    <i class="fab fa-html5"></i>
-                    <p>AJAX</p>
+                    <img src="img/icons/git_icon.png" alt="git icon">
+                    <p>GIT</p>
                 </div>
             </div>
             <div id="projects" class="box-projects-nested">
@@ -124,6 +140,8 @@
             
         </div>
     </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
