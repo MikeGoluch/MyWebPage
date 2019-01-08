@@ -6,110 +6,116 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
-    <link rel="shortcut icon" href="http://sstatic.net/stackoverflow/img/favicon.ico">
+    <link rel="shortcut icon" href="img/content/logomg_small.png">
     <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
 </head>
 <body>
+    <div id="load-screen">
+        <div id="loading">
+            <div class="greetings">
+                <p id="typeWriter" class="welcome-word"></p>
+                <p id="lineExtend" class="line"></p>
+                <p class="triangle"></p>
+            </div>
+        </div>
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+    </div>
     <div class="wrapper">
-        <div class="box-header">
-            
-
-            <!--Navbar-->
-            <nav class="navbar navbar-fixed-top">
-                <div class="logo">
-                    <a href="#"  aria-label="logo" class="logo">
-                        <img src="img/content/logomg_small.png" alt="logo image" class="nav-logo">
-                    </a>
-                </div>
-                <!-- Collapse button -->
-                <button class="navbar-toggler third-button" type="button" data-toggle="collapse" data-target="#navbarSupportedContent22"
-                aria-controls="navbarSupportedContent22" aria-expanded="false" aria-label="Toggle navigation">
-                    <div class="animated-icon4">
-                        <span></span><span></span><span></span>
+        <header class="header">
+            <nav id="navbar" class="my-navbar">
+                <div class="background-nav">
+                    <div class="logo">
+                        <a href="#"  aria-label="logo" class="logo">
+                            <img src="img/content/logomg_small.png" alt="logo image" class="nav-logo">
+                        </a>
                     </div>
-                </button>
-            
-                <!-- Collapsible content -->
-                <div class="collapse navbar-collapse text-center" id="navbarSupportedContent22">
-            
-                <!-- Links -->
-                <ul class="navbar-nav">
-                    <li class="nav-item active">
-                    <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+                    <div class="toggle">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                </div>
+                <ul class="my-navbar-nav">
+                    <li class="my-nav-item active">
+                        <a class="my-nav-link" href="#">Home</a>
+                    <li class="my-nav-item">
+                        <a class="my-nav-link" href="#about-me">About me</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">About me</a>
+                    <li class="my-nav-item">
+                        <a class="my-nav-link" href="#projects">Projects</a>
                     </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Projects</a>
-                    </li>
-                    <li class="nav-item">
-                    <a class="nav-link" href="#">Contact</a>
+                    <li class="my-nav-item">
+                        <a class="my-nav-link" href="#contact">Contact</a>
                     </li>
                 </ul>
-                <!-- Links -->
-            
-                </div>
-                <!-- Collapsible content -->
-            
             </nav>
-            <!--/.Navbar-->
-
-            
-        
-        </div>
-        <div class="box-main">
-            <div class="box-home-nested">
-                <p>Hi, I'm Michał Gołuch</br>Junior Front-End Developer<p>
+            <div class="box-header">
+                    <h1>Hi, I'm Michael</br>I want to become a Front-End Developer</h1>
             </div>
-            <div id="about_me" class="box-about-me-nested">
-                <h1>About me</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolore, cupiditate!</p>
+        </header>
+        <main class="box-main">
+            <div id="about-me" class="box-about-me">
+                <h2>About me</h2>
+                <div class="underline"></div>
+                <p>During the day, project assistant, in the night scrupulously striving for the goal amateur of Web Development.
+                    The job so far helped me to develop the skill in teamwork.
+                    It changed my way of thinking, not to search for problems but only for the solutions.
+                    Creativity and preciseness are features which accompany me in my everyday life.
+                    Constant desire for self development was the key to start searching for new challenges.
+                    This decision lead me to programming's world door.
+                    I've already took a small peek but I'd definitely step inside.</p>
             </div>
-            <div class="my-skills">
-                <h1>Known technologies</h1>
-                <div>
-                    <span class="devicons devicons-html5"></span>
-                    <p>Html5</p>
-                </div>
-                <div>
-                    <span class="devicons devicons-css3"></span>
-                    <p>Css3</p>
-                </div>
-                <div>
-                    <span class="devicons devicons-responsive"></span>
-                    <p>Rwd</p>
-                </div>
-                <div>
-                    <span class="devicons devicons-bootstrap"></span>
-                    <p>Bootstrap</p>
-                </div>
-                <div>
-                    <span class="devicons devicons-javascript"></span>
-                    <p>Javascript</p>
-                </div>
-                <div>
-                    <span class="devicons devicons-jquery"></span>
-                    <p>Jquery</p>
-                </div>
-                <div>
-                    <span class="devicons devicons-sass"></span>
-                    <p>Sass</p>
-                </div>
-                <div>
-                    <span class="devicons devicons-git"></span>
-                    <p>Git</p>
+            <div class="my-technologies">
+                <h2>Acquired abilities</h2>
+                <div class="underline"></div>
+                <div class="my-skills-grid">
+                    <div class="skill-icon">
+                        <span class="devicons devicons-html5"></span>
+                        <p>Html5</p>
+                    </div>
+                    <div class="skill-icon">
+                        <span class="devicons devicons-css3"></span>
+                        <p>Css3</p>
+                    </div>
+                    <div class="skill-icon">
+                        <span class="devicons devicons-responsive"></span>
+                        <p>Rwd</p>
+                    </div>
+                    <div class="skill-icon">
+                        <span class="devicons devicons-bootstrap"></span>
+                        <p>Bootstrap</p>
+                    </div>
+                    <div class="skill-icon">
+                        <span class="devicons devicons-javascript"></span>
+                        <p>Javascript</p>
+                    </div>
+                    <div class="skill-icon">
+                        <span class="devicons devicons-jquery"></span>
+                        <p>Jquery</p>
+                    </div>
+                    <div class="skill-icon">
+                        <span class="devicons devicons-sass"></span>
+                        <p>Sass</p>
+                    </div>
+                    <div class="skill-icon">
+                        <span class="devicons devicons-git"></span>
+                        <p>Git</p>
+                    </div>
                 </div>
             </div>
-            <div id="projects" class="box-projects-nested">
-                <h1>MY PROJECTS</h1>
-                <div>Lorem ipsum dolor sit amet.</div>
-                <div>Lorem ipsum dolor sit amet.</div>
-                <div>Lorem ipsum dolor sit amet.</div>
+            <div id="projects" class="box-projects">
+                <h2>MY PROJECTS</h2>
+                <div class="underline"></div>
+                <div class="projects-grid">
+                    <div>Lorem ipsum dolor sit amet.</div>
+                    <div>Lorem ipsum dolor sit amet.</div>
+                    <div>Lorem ipsum dolor sit amet.</div>
+                </div>
             </div>
-            <div id="contact" class="box-contact-nested">
-                <h1>Contact me</h1>
+            <div id="contact" class="box-contact">
+                <h2>Contact me</h2>
                 <div class="underline"></div>
                 <p>Looking for a Front-End Developer? Have You got any questions? Contact me.</br>goluch.michal89@gmail.com </p>
                 <form action="https://formspree.io/goluch.michal89@gmail.com" method="POST">
@@ -127,8 +133,8 @@
                     </div>
                 </form>
             </div>
-        </div>
-        <div class="box-footer">
+        </main>
+        <footer class="box-footer">
             <div>
                 <a href="https://www.linkedin.com/in/micha%C5%82-g-044626162/" class="linkedin">
                     <i class="fab fa-linkedin"></i>
@@ -139,7 +145,7 @@
             </div>
             <div>FAMG &copy 2018</div>
             
-        </div>
+        </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
