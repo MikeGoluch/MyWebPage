@@ -4,11 +4,12 @@
     <meta charset="utf-8" />
     <title>Michał Gołuch | Front End Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
     <link rel="shortcut icon" href="img/content/logomg_small.png">
     <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css" integrity="sha384-UHRtZLI+pbxtHCWp1t77Bi1L4ZtiqrqD80Kn4Z8NTSRyMA2Fd33n5dQ8lWUE00s/" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"> -->
 </head>
 <body>
     <div id="load-screen">
@@ -39,20 +40,28 @@
                 </div>
                 <ul class="my-navbar-nav">
                     <li class="my-nav-item active">
-                        <a class="my-nav-link" href="#">Home</a>
+                        <a class="my-nav-link underline-from-center" href="#">Home</a>
                     <li class="my-nav-item">
-                        <a class="my-nav-link" href="#about-me">About me</a>
+                        <a class="my-nav-link underline-from-center" href="#about-me">About me</a>
                     </li>
                     <li class="my-nav-item">
-                        <a class="my-nav-link" href="#projects">Projects</a>
+                        <a class="my-nav-link underline-from-center" href="#projects">Projects</a>
                     </li>
                     <li class="my-nav-item">
-                        <a class="my-nav-link" href="#contact">Contact</a>
+                        <a class="my-nav-link underline-from-center" href="#contact">Contact</a>
                     </li>
                 </ul>
             </nav>
             <div class="box-header">
-                    <h1>Hi, I'm Michael</br>I want to become a Front-End Developer</h1>
+                <div class="header-image parallax-container">
+                  <div class="parallax">
+                        <img src="img/content/pexels-photo-169573.jpeg" alt="">
+                  </div>
+
+                </div>
+            </div>
+            <div class="header-over-text">
+                <h1>Hi, I'm Michael</br>I want to become a Front-End Developer</h1>
             </div>
         </header>
         <main class="box-main">
@@ -68,38 +77,38 @@
                     I've already took a small peek but I'd definitely step inside.</p>
             </div>
             <div class="my-technologies">
-                <h2>Acquired abilities</h2>
+                <h2>Working with</h2>
                 <div class="underline"></div>
                 <div class="my-skills-grid">
-                    <div class="skill-icon">
+                    <div class="skill-icon item1">
                         <span class="devicons devicons-html5"></span>
                         <p>Html5</p>
                     </div>
-                    <div class="skill-icon">
+                    <div class="skill-icon item2">
                         <span class="devicons devicons-css3"></span>
                         <p>Css3</p>
                     </div>
-                    <div class="skill-icon">
-                        <span class="devicons devicons-responsive"></span>
-                        <p>Rwd</p>
+                    <div class="skill-icon item3">
+                        <span class="devicons devicons-gulp"></span>
+                        <p>Gulp</p>
                     </div>
-                    <div class="skill-icon">
+                    <div class="skill-icon item4">
                         <span class="devicons devicons-bootstrap"></span>
                         <p>Bootstrap</p>
                     </div>
-                    <div class="skill-icon">
+                    <div class="skill-icon item5">
                         <span class="devicons devicons-javascript"></span>
                         <p>Javascript</p>
                     </div>
-                    <div class="skill-icon">
+                    <div class="skill-icon item6">
                         <span class="devicons devicons-jquery"></span>
                         <p>Jquery</p>
                     </div>
-                    <div class="skill-icon">
+                    <div class="skill-icon item7">
                         <span class="devicons devicons-sass"></span>
                         <p>Sass</p>
                     </div>
-                    <div class="skill-icon">
+                    <div class="skill-icon item8">
                         <span class="devicons devicons-git"></span>
                         <p>Git</p>
                     </div>
@@ -109,9 +118,9 @@
                 <h2>MY PROJECTS</h2>
                 <div class="underline"></div>
                 <div class="projects-grid">
-                    <div>Lorem ipsum dolor sit amet.</div>
-                    <div>Lorem ipsum dolor sit amet.</div>
-                    <div>Lorem ipsum dolor sit amet.</div>
+                    <div class="project1">Lorem ipsum dolor sit amet.</div>
+                    <div class="project2">Lorem ipsum dolor sit amet.</div>
+                    <div class="project3">Lorem ipsum dolor sit amet.</div>
                 </div>
             </div>
             <div id="contact" class="box-contact">
@@ -137,18 +146,18 @@
         <footer class="box-footer">
             <div>
                 <a href="https://www.linkedin.com/in/micha%C5%82-g-044626162/" class="linkedin">
-                    <i class="fab fa-linkedin"></i>
+                    <i class="fab fa-linkedin-in"></i>
                 </a>
                 <a href="https://github.com/MikeGoluch" class="github">
-                    <i class="fab fa-github-square"></i>
+                    <span class="devicons devicons-github_badge"></span>
                 </a>
             </div>
             <div>FAMG &copy 2018</div>
-            
         </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <script src="js/script.js"></script>
 </body>
 </html>
