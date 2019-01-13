@@ -1,16 +1,5 @@
 //properties
 
-@mixin width-maxwidth-margin {
-    max-width: 1200px;
-	margin: 0 auto;
-	width: 100%;
-}
-
-@mixin square-size($size) {
-    width: $size;
-    height: $size;
-}
-
 @mixin underline {
     height: 1px;
     width: 10%;
@@ -19,7 +8,7 @@
 }
 
 @mixin p-margin-lheight-wspacing-lspacing {
-    margin: 1rem 0;
+    margin: 10%;
     line-height: 1.5;
     word-spacing: 5px;
     letter-spacing: 1px;
