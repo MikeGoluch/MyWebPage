@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <meta charset="utf-8" />
     <title>Michał Gołuch | Front End Developer</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css">
+    <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"> -->
     <link rel="stylesheet" type="text/css" media="screen" href="css/styles.css" />
     <link rel="shortcut icon" href="img/content/logomg_small.png">
     <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
@@ -53,7 +53,7 @@
                 </ul>
             </nav>
             <div class="box-header">
-                <div class="header-image parallax-container">
+                <div class="header-image">
                   <div class="parallax">
                         <img src="img/content/pexels-photo-169573.jpeg" alt="">
                   </div>
@@ -61,7 +61,7 @@
                 </div>
             </div>
             <div class="header-over-text">
-                <h1>Hi, I'm Michael</br>I want to become a Front-End Developer</h1>
+                <h1>Hi, I'm Michael<br>I want to become a Front-End Developer</h1>
             </div>
         </header>
         <main class="box-main">
@@ -118,27 +118,51 @@
                 <h2>MY PROJECTS</h2>
                 <div class="underline"></div>
                 <div class="projects-grid">
-                    <div class="project1">Lorem ipsum dolor sit amet.</div>
-                    <div class="project2">Lorem ipsum dolor sit amet.</div>
-                    <div class="project3">Lorem ipsum dolor sit amet.</div>
+                    <div class="project1-wrapper">
+                        <div class="project1">
+                            <img src="./img/content/pexels-photo-326501.jpeg" alt="project1">
+                            <a href=""><i class="far fa-play-circle play-left"></i></a>
+                            <a href=""><i class="fas fa-code-branch github-right"></i></a>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div class="project2-wrapper">
+                        <div class="project2">
+                            <img src="./img/content/pexels-photo-326501.jpeg" alt="project2">
+                            <a href=""><i class="far fa-play-circle play-left"></i></a>
+                            <a href=""><i class="fas fa-code-branch github-right"></i></a>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
+                    <div class="project3-wrapper">
+                        <div class="project3">
+                            <img src="./img/content/pexels-photo-326501.jpeg" alt="project3">
+                            <a href=""><i class="far fa-play-circle play-left"></i></a>
+                            <a href=""><i class="fas fa-code-branch github-right"></i></a>
+                        </div>
+                        <p>Lorem ipsum dolor sit amet.</p>
+                    </div>
                 </div>
             </div>
             <div id="contact" class="box-contact">
                 <h2>Contact me</h2>
                 <div class="underline"></div>
-                <p>Looking for a Front-End Developer? Have You got any questions? Contact me.</br>goluch.michal89@gmail.com </p>
+                <p>Looking for a Front-End Developer? Have You got any questions? Contact me.<br>goluch.michal89@gmail.com </p>
                 <form action="https://formspree.io/goluch.michal89@gmail.com" method="POST">
                     <div class="form-name">
-                        <label for="name">Your Name</label>
-                        <input type="text" placeholder="John Smith" name="firstname" required>
+                        <label for="firstname">Your Name</label>
+                        <input type="text" placeholder="John Smith" id="firstname" required>
                     </div>
                     <div class="form-email">
-                        <label for="mail">Your email</label>
-                        <input type="text" placeholder="example@domain.com" name="email" required>
+                        <label for="email">Your email</label>
+                        <input type="text" placeholder="example@domain.com" id="email" required>
                     </div>
                     <div class="form-message">
                         <label for="msg">Message</label>
                         <textarea id="msg" placeholder="Enter your message here" rows="5" name="user_message" required></textarea>
+                    </div>
+                    <div class="form-send">
+                        <input class="contact-btn" type="submit" value="Send">
                     </div>
                 </form>
             </div>
@@ -156,7 +180,7 @@
         </footer>
     </div>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script>
+    <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"></script> -->
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script> -->
     <script src="js/script.js"></script>
 </body>
