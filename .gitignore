@@ -62,9 +62,3 @@ typings/
 
 #sass cache files
 .sass-cache
-
-#output commands
-style.css
-style.css.map
-style.prefixed.css
-style.prefixed.css.map
