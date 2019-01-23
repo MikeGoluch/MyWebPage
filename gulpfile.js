@@ -1,38 +1,49 @@
-
-// Include Gulp
-
 var gulp = require('gulp');
 
-// Include Our Plugins
-
-var jshint = require('gulp-jshint');
-var sass = require('gulp-sass');
-var postcss = require('gulp-postcss');
-var autoprefixer = require('autoprefixer');
-var cssnano = require('cssnano');
-var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
+var concat = require('gulp-concat');
+var csso = require('gulp-csso');
+var del = require('del');
 var gulpShell = require('gulp-shell');
-var newer = require('gulp-newer');
-var imagemin = require('gulp-imagemin');
-var htmlclean = require('gulp-htmlclean');
+var htmlmin = require('gulp-htmlmin');
+var sass = require('gulp-sass');
+var sourcemaps = require('gulp-sourcemaps');
+var terser = require('gulp-terser');
+
+
+const AUTOPREFIXER_BROWSERS = [
+    'ie >= 10',
+    'ie_mob >= 10',
+    'ff >= 30',
+    'chrome >= 34',
+    'safari >= 7',
+    'opera >= 23',
+    'ios >= 7',
+    'android >= 4.4',
+    'bb >= 10'
+];
 
 // Set Paths
 
 var paths = {
-  styles: {
-    src: 'src/scss/*.scss',
-    dest: 'src/css/',
-    js: 'js/*.js',
-    out: 'build/img/',
-    html: 'build/'
+    prodStyles: {
+        sass: 'src/scss/*.scss',
+        css: 'src/css/',
+        js: 'src/js/*.js'
+    },
+    distStyles: {
+        css: 'dist/css',
+        js: 'dist/js',
+        html: 'dist',
+        img: 'dist/img'
+    }
   }
-}
-
+  
 //Create Folder Structure
 
 gulp.task('structure', function() {
-  return gulp
+return gulp
     .src('*.*', {read: false})
     .pipe(gulp.dest('./src'))
     .pipe(gulp.dest('./src/css'))
@@ -41,87 +52,101 @@ gulp.task('structure', function() {
     .pipe(gulp.dest('./src/img/icons'))
     .pipe(gulp.dest('./src/fonts'))
     .pipe(gulp.dest('./src/js'))
-    // .pipe(gulp.dest('./build'))
-    // .pipe(gulp.dest('./build/css'))
-    // .pipe(gulp.dest('./build/scss'))
-    // .pipe(gulp.dest('./build/img/content'))
-    // .pipe(gulp.dest('./build/img/icons'))
-    // .pipe(gulp.dest('./build/fonts'))
-    // .pipe(gulp.dest('./build/js'));
+    .pipe(gulp.dest('./dist'))
+    .pipe(gulp.dest('./dist/css'))
+    .pipe(gulp.dest('./dist/js'));
 });
 
+//Create files in folders
+
 gulp.task('files', function() {
-  return gulp
-    .src('src/css/', {read: false})
-    .pipe(gulpShell([
-      'touch src/css/styles.css src/scss/styles.scss src/index.html src/js/script.js'
-    ]));
+    return gulp
+        .src('./src/', {read: false})
+        .pipe(gulpShell([
+        'touch src/css/styles.css src/scss/styles.scss src/index.html src/js/script.js'
+        ]));
 });
 
 gulp.task('initialWork', gulp.series('structure', 'files'));
 
-// Watch
+//Translate sass to css, add prefixes, bundle all files
 
-gulp.task('style', function() {
-  return gulp
-    .src(paths.styles.src)
-    .pipe(sourcemaps.init())
-    .pipe(sass())
-    .on('error', sass.logError)
-    // .pipe(postcss([autoprefixer(), cssnano()]))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(paths.styles.dest))
-    // .pipe(browserSync.stream());
+gulp.task('sass', function() {
+    return gulp
+        .src(paths.prodStyles.sass)
+        .pipe(sourcemaps.init())
+        .pipe(sass().on('error', sass.logError))
+        .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
+        .pipe(concat('styles.css'))
+        .pipe(sourcemaps.write())
+        .pipe(gulp.dest(paths.prodStyles.css))
+        .pipe(browserSync.stream());
 });
 
-gulp.task('reload', function() {
-  browserSync.reload();
-});
+//Combined tasks with live reload
 
 gulp.task('watch', function() {
-  // browserSync.init({
-  //   server: {
-  //     baseDir: './'
-  //   }
-  // });
-  gulp.watch(paths.styles.src, gulp.series('style'));
-  gulp.watch('*.html', gulp.series('reload'));
-  // gulp.watch(paths.js, ['lint', 'scripts']);
+    browserSync.init({
+        server: './src'
+    });
+    gulp.watch(paths.prodStyles.sass, gulp.series('sass'))
+    gulp.watch('src/*.html').on('change', browserSync.reload);
 });
 
-// Lint Task
+// For distribution
 
-gulp.task('lint', function() {
-  return gulp
-    .src('src/js/*.js')
-    .pipe(jshint())
-    .pipe(jshint.reporter('default'));
+// Gulp task to minify CSS files
+
+gulp.task('styles', function () {
+    return gulp
+        .src('src/css/styles.css')
+    // Compile SASS files
+        .pipe(sass({
+            outputStyle: 'nested',
+            precision: 10,
+            includePaths: ['.'],
+            onError: console.error.bind(console, 'Sass error:')
+        }))
+    // Auto-prefix css styles for cross browser compatibility
+        .pipe(autoprefixer({browsers: AUTOPREFIXER_BROWSERS}))
+    // Minify the file
+        .pipe(csso())
+    // Output
+        .pipe(gulp.dest(paths.distStyles.css))
 });
+
+// Gulp task to minify JavaScript files
 
 gulp.task('scripts', function() {
-  return gulp
-    .src('src/js/*.js')
-    .pipe(concat('all.js'))
-    .pipe(gulp.dest('dist'))
-    .pipe(rename('all.min.js'))
-    .pipe(uglify())
-    .pipe(gulp.dest('build/js'));
+    return gulp
+        .src(paths.prodStyles.js)
+    // Minify the file
+        .pipe(terser())
+    // Output
+        .pipe(gulp.dest(paths.distStyles.js))
 });
 
-// Image Task
+// Gulp task to minify HTML files
 
-gulp.task('images', function() {
-  return gulp.src('src/img/**/*')
-    .pipe(newer(paths.styles.out))
-    .pipe(imagemin({ optimizationLevel: 5 }))
-    .pipe(gulp.dest(paths.styles.out));
+gulp.task('pages', function() {
+    return gulp
+        .src(['./src/*.html'])
+        .pipe(htmlmin({
+            collapseWhitespace: true,
+            removeComments: true
+        }))
+        .pipe(gulp.dest(paths.distStyles.html));
 });
 
-// //HTML Task
+// Clean output directory
 
-// gulp.task('html', gulp.series('images'), function() {
-//   return gulp.src('src/*.html')
-//     .pipe(newer('build/'))
-//     .pipe(htmlclean())
-//     .pipe(gulp.dest('build/test'));
-// });
+gulp.task('clean', function(done) {
+    del(['dist']);
+    done();
+}); 
+
+// Gulp task to minify all files
+
+gulp.task('default', gulp.series('clean', gulp.parallel(['styles', 'scripts', 'pages'])), function (done) {
+    done();
+});
