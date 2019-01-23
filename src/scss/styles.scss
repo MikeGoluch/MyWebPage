@@ -214,11 +214,8 @@ header {
             font-weight: 700;
         }
         .underline-from-center {
-            -webkit-transform: translateZ(0);
             transform: translateZ(0);
-            -webkit-backface-visibility: hidden;
             backface-visibility: hidden;
-            -moz-osx-font-smoothing: grayscale;
             position: relative;
             overflow: hidden;
             &:before {
@@ -230,11 +227,8 @@ header {
               bottom: -4px;
               background: #ffffff;
               height: 1px;
-              -webkit-transition-property: left right;
               transition-property: left right;
-              -webkit-transition-duration: 0.3s;
               transition-duration: 0.3s;
-              -webkit-transition-timing-function: ease-out;
               transition-timing-function: ease-out;
             }
             &:hover:before {
@@ -284,7 +278,6 @@ header {
         .parallax {
             img {
                 width: 100%;
-                position: relative;
             }
         }
     }
@@ -295,7 +288,7 @@ header {
         @include h2-fsize-lheight-margin;
         text-transform: uppercase;
         color: #ffffff;
-        background-color: rgba(0,0,0,.5);
+        background-color: rgba(0,0,0,.7);
         border: 1px solid #ffffff;
         padding: 5px;
         position: absolute;
@@ -448,6 +441,10 @@ header {
     }
     h2 {
         @include h2-fsize-lheight-margin;
+    }
+    div[class*='form-'],
+    div[class*='form-'] input {
+        font: inherit;
     }
     form input {
         width: 100%;
