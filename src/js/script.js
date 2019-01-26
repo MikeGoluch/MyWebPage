@@ -25,7 +25,7 @@
         if (scroll > 0) {
           $('.my-navbar').css('background-color' , 'rgba(0,0,0,.7)');
         } else {
-          $('.my-navbar').css('background-color' , 'rgba(0,0,0,1)');  	
+          $('.my-navbar').css('background-color' , '#121214');  	
         }
       })
 
