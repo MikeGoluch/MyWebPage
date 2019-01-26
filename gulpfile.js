@@ -7,6 +7,8 @@ var csso = require('gulp-csso');
 var del = require('del');
 var gulpShell = require('gulp-shell');
 var htmlmin = require('gulp-htmlmin');
+var imagemin = require('gulp-imagemin');
+var newer = require('gulp-newer');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var terser = require('gulp-terser');
@@ -138,6 +140,15 @@ gulp.task('pages', function() {
         .pipe(gulp.dest(paths.distStyles.html));
 });
 
+// Image Task
+
+gulp.task('images', function() {
+    return gulp.src('src/img/**/*')
+        .pipe(newer(paths.distStyles.img))
+        .pipe(imagemin({ optimizationLevel: 5 }))
+        .pipe(gulp.dest(paths.distStyles.img));
+});
+
 // Clean output directory
 
 gulp.task('clean', function(done) {
@@ -147,6 +158,6 @@ gulp.task('clean', function(done) {
 
 // Gulp task to minify all files
 
-gulp.task('default', gulp.series('clean', gulp.parallel(['styles', 'scripts', 'pages'])), function (done) {
+gulp.task('default', gulp.series('clean', gulp.parallel(['styles', 'scripts', 'pages', 'images'])), function (done) {
     done();
 });
