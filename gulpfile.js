@@ -3,6 +3,7 @@ var gulp = require('gulp');
 var autoprefixer = require('gulp-autoprefixer');
 var browserSync = require('browser-sync').create();
 var concat = require('gulp-concat');
+var copy = require('gulp-copy');
 var csso = require('gulp-csso');
 var del = require('del');
 var gulpShell = require('gulp-shell');
@@ -32,13 +33,15 @@ var paths = {
     prodStyles: {
         sass: 'src/scss/*.scss',
         css: 'src/css/',
-        js: 'src/js/*.js'
+        js: 'src/js/*.js',
+        fonts: 'src/fonts/*.*'
     },
     distStyles: {
         css: 'dist/css',
         js: 'dist/js',
         html: 'dist',
-        img: 'dist/img'
+        img: 'dist/img',
+        fonts: 'dist/fonts'
     }
   }
   
@@ -56,6 +59,8 @@ return gulp
     .pipe(gulp.dest('./src/js'))
     .pipe(gulp.dest('./dist'))
     .pipe(gulp.dest('./dist/css'))
+    .pipe(gulp.dest('./dist/fonts'))
+    .pipe(gulp.dest('./dist/img'))
     .pipe(gulp.dest('./dist/js'));
 });
 
@@ -149,15 +154,24 @@ gulp.task('images', function() {
         .pipe(gulp.dest(paths.distStyles.img));
 });
 
+//Copy files
+
+gulp.task('copy', function() {
+    return gulp
+        .src(paths.prodStyles.fonts)
+        .pipe(copy(paths.distStyles.fonts, {prefix: 2}))
+        // .pipe(gulp.dest(paths.distStyles.fonts));
+});
+
 // Clean output directory
 
-gulp.task('clean', function(done) {
-    del(['dist']);
-    done();
+gulp.task('clean', function() {
+    return del(['dist/**']);
+    
 }); 
 
 // Gulp task to minify all files
 
-gulp.task('default', gulp.series('clean', gulp.parallel(['styles', 'scripts', 'pages', 'images'])), function (done) {
+gulp.task('default', gulp.series('clean', gulp.series(['styles', 'scripts', 'pages', 'images', 'copy'])), function (done) {
     done();
 });
