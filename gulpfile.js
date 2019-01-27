@@ -137,7 +137,7 @@ gulp.task('scripts', function() {
 
 gulp.task('pages', function() {
     return gulp
-        .src(['./src/*.html'])
+        .src(['./*.html'])
         .pipe(htmlmin({
             collapseWhitespace: true,
             removeComments: true
