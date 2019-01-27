@@ -70,11 +70,7 @@ gulp.task('files', function() {
     return gulp
         .src('./src/', {read: false})
         .pipe(gulpShell([
-<<<<<<< HEAD
-        'touch src/css/styles.css src/scss/styles.scss src/index.html src/js/script.js'
-=======
         'touch src/css/styles.css src/scss/styles.scss index.html src/js/script.js'
->>>>>>> html-task
         ]));
 });
 
@@ -98,7 +94,7 @@ gulp.task('sass', function() {
 
 gulp.task('watch', function() {
     browserSync.init({
-        server: './src'
+        server: './'
     });
     gulp.watch(paths.prodStyles.sass, gulp.series('sass'))
     gulp.watch('src/*.html').on('change', browserSync.reload);
