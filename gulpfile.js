@@ -70,7 +70,7 @@ gulp.task('files', function() {
     return gulp
         .src('./src/', {read: false})
         .pipe(gulpShell([
-        'touch src/css/styles.css src/scss/styles.scss src/index.html src/js/script.js'
+        'touch src/css/styles.css src/scss/styles.scss index.html src/js/script.js'
         ]));
 });
 
