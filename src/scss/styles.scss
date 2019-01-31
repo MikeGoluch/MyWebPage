@@ -63,7 +63,13 @@ table {
 * {
     box-sizing: border-box;
 }
+
+
 //Page styling
+
+html {
+    scroll-behavior: smooth;
+}
 
 //Pre loader elements
 
