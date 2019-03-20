@@ -97,7 +97,7 @@ gulp.task('watch', function() {
         server: './'
     });
     gulp.watch(paths.prodStyles.sass, gulp.series('sass'))
-    gulp.watch('src/*.html').on('change', browserSync.reload);
+    gulp.watch('./*.html').on('change', browserSync.reload);
 });
 
 // For distribution
