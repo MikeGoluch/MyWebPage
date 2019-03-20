@@ -1,16 +1,26 @@
 {
-  "name": "mypage",
+  "name": "mywebpage",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Welcome to my first page project. <br>\r [My Web Page](https://mikegoluch.github.io/MyWebPage/)",
+  "main": "gulpfile.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MikeGoluch/MyWebPage.git"
+  },
   "author": "FAMG",
-  "license": "ISC",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MikeGoluch/MyWebPage/issues"
+  },
+  "homepage": "https://github.com/MikeGoluch/MyWebPage#readme",
   "devDependencies": {
-    "browser-sync": "^2.26.3",
-    "del": "^3.0.0",
+    "browser-sync": "^2.26.3"
+  },
+  "dependencies": {
+    "del": "^4.0.0",
     "gulp": "^4.0.0",
     "gulp-autoprefixer": "^6.0.0",
     "gulp-concat": "^2.6.1",
@@ -20,9 +30,8 @@
     "gulp-imagemin": "^5.0.3",
     "gulp-newer": "^1.4.0",
     "gulp-sass": "^4.0.2",
-    "gulp-shell": "^0.6.5",
-    "gulp-sourcemaps": "^2.6.4",
+    "gulp-shell": "^0.7.0",
+    "gulp-sourcemaps": "^2.6.5",
     "gulp-terser": "^1.1.7"
-  },
-  "dependencies": {}
+  }
 }
