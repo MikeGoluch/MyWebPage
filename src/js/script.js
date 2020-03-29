@@ -12,20 +12,20 @@
       }
   });
     $('.toggle, .my-navbar-nav').click(function() {
-      if (largeDevices) {
-        $('.my-navbar').removeClass('nav-is-open');
-      } else {
+      // if (largeDevices) {
+      //   $('.my-navbar').removeClass('nav-is-open');
+      // } else {
         $('.my-navbar').toggleClass('nav-is-open');
         $('.toggle').toggleClass('active');
-      }
+      // }
       });
       
       $(window).scroll(function(){
         var scroll = $(window).scrollTop();
         if (scroll > 0) {
-          $('.my-navbar').css('background-color' , 'rgba(0,0,0,.7)');
+          $('.my-navbar').css('background-color' , 'rgba(0,0,0,.1)');
         } else {
-          $('.my-navbar').css('background-color' , '#121214');  	
+          $('.my-navbar').css('background-color' , 'rgba(0,0,0,.1)');  	
         }
       })
 
