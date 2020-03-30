@@ -286,7 +286,7 @@ header {
     // margin-top: 80px;
     .header-image {
         margin-bottom: -4px;
-        background-image: linear-gradient(#000000, #000000), url('../img/content/coding-computer-data-depth-of-field-577585_1200_600.jpg');
+        background-image: linear-gradient(#000000, #000000), url('../img/content/header_1200_600.jpg');
         background-position: center;
         background-repeat: no-repeat;
         background-size: cover;
@@ -313,72 +313,77 @@ header {
     }
 }
 
-.box-about-me {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    min-height: 200px;
-    padding: 2rem;
-    text-transform: uppercase;
-    text-align: center;
-    background-color: $about-projects-bg-color;
-    h2 {
-        @include h2-fsize-lheight-margin;
-    }
-    p {
-        @include p-margin-lheight-wspacing-lspacing;
-    }
-    .underline {
-        @include underline;
-    }
-}
+// .box-about-me {
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     align-items: center;
+//     min-height: 200px;
+//     padding: 2rem;
+//     text-transform: uppercase;
+//     text-align: center;
+//     background-color: $about-projects-bg-color;
+//     h2 {
+//         @include h2-fsize-lheight-margin;
+//     }
+//     p {
+//         @include p-margin-lheight-wspacing-lspacing;
+//     }
+//     .underline {
+//         @include underline;
+//     }
+// }
 
-.my-technologies {
-    background-color: $contact-skills-bg-color; //#192A51
-    padding: 2rem;
-    color: #ffffff;
-    text-transform: uppercase;
-    text-align: center;
-    h2 {
-        @include h2-fsize-lheight-margin;
-    }
-    .underline {
-        @include underline;
-    }
-    .my-skills-grid {
-        display: grid;
-        grid-row-gap: 20px;
-        grid-template-columns: repeat(2, 1fr);
-        justify-items: center;
-        align-items: center;
-        padding-top: 1rem;
-        * {
-            text-align: center;
-        }
-        span {
-            font-size: 90px;
-            color: #dc0210;
-        }
-        p {
-            @include p-margin-lheight-wspacing-lspacing;
-            color: #ffffff;
-            text-transform: uppercase;
-        }
-        .skill-icon:hover {
-            transition: 0.5s;
-            transform: scale(1.1,1.1);
-            span {
-                color: #ffffff;
-            }
-        }
-    }
-}
+// .my-technologies {
+//     background-color: $contact-skills-bg-color; //#192A51
+//     padding: 2rem;
+//     color: #ffffff;
+//     text-transform: uppercase;
+//     text-align: center;
+//     h2 {
+//         @include h2-fsize-lheight-margin;
+//     }
+//     .underline {
+//         @include underline;
+//     }
+//     .my-skills-grid {
+//         display: grid;
+//         grid-row-gap: 20px;
+//         grid-template-columns: repeat(2, 1fr);
+//         justify-items: center;
+//         align-items: center;
+//         padding-top: 1rem;
+//         * {
+//             text-align: center;
+//         }
+//         span {
+//             font-size: 90px;
+//             color: #dc0210;
+//         }
+//         p {
+//             @include p-margin-lheight-wspacing-lspacing;
+//             color: #ffffff;
+//             text-transform: uppercase;
+//         }
+//         .skill-icon:hover {
+//             transition: 0.5s;
+//             transform: scale(1.1,1.1);
+//             span {
+//                 color: #ffffff;
+//             }
+//         }
+//     }
+// }
 
 .box-projects {
-    min-height: 300px;
+    min-height: 600px;
     padding: 2rem;
-    background-color: $about-projects-bg-color;
+    background-image: linear-gradient(#000000, #000000), url('../img/content/projects_1200_600.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: saturation;
+    // background-color: $about-projects-bg-color;
     text-align: center;
     h2 {
         @include h2-fsize-lheight-margin;
@@ -469,6 +474,8 @@ header {
                 .project-img {
                     height: 100%;
                     img {
+                        height: 100%;
+                        width: 100%;
                         object-fit: cover;
                     }
                 }
