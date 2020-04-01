@@ -1,8 +1,14 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const FullPage = require('fullpage.js');
 // const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+// import fullpage from 'fullpage.js';
 
+// var fullPageInstance = new fullpage('#myFullpage', {
+//     navigation: true,
+//     sectionsColor:['#ff5f45', '#0798ec', '#fc6c7c', 'grey']
+// });
 
 module.exports = {
     entry: ['babel-polyfill', './src/js/index.js'],
@@ -75,6 +81,10 @@ module.exports = {
                 template: './src/index.html'
             }
         ),
+        // new FullPage('#myFullpage', {
+        //     navigation: true,
+        //     sectionsColor:['#ff5f45', '#0798ec', '#fc6c7c', 'grey']
+        // })
         // new MiniCssExtractPlugin({
         //     filename: './style.css'
         // })

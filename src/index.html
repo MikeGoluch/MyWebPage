@@ -6,8 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- <link rel="stylesheet" media="screen" href="./css/style.css" /> -->
     <link rel="shortcut icon" href="./img/content/logomg_small.png">
-    <link href='//cdn.jsdelivr.net/devicons/1.8.0/css/devicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 </head>
 <body>
     <div id="load-screen">
@@ -23,46 +23,45 @@
     </div>
     <div class="wrapper">
         <header class="header">
-            <nav id="navbar" class="my-navbar">
-                <div class="background-nav">
-                    <div class="logo">
-                        <a href="#" aria-label="logo" class="logo">
-                            <img src="./img/content/logomg_small.png" alt="logo image" class="nav-logo">
-                        </a>
+
+                <nav id="navbar" class="my-navbar">
+                    <div class="background-nav">
+                        <div class="logo">
+                            <a href="#" aria-label="logo" class="logo">
+                                <img src="./img/content/logomg_small.png" alt="logo image" class="nav-logo">
+                            </a>
+                        </div>
+                        <div class="toggle">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
                     </div>
-                    <div class="toggle">
-                        <span></span>
-                        <span></span>
-                        <span></span>
+                    <ul class="my-navbar-nav">
+                        <li class="my-nav-item active">
+                            <a class="my-nav-link underline-from-center" href="#">Home</a>
+                        <li class="my-nav-item">
+                            <a class="my-nav-link underline-from-center" href="#projects">Projects</a>
+                        </li>
+                        <li class="my-nav-item">
+                            <a class="my-nav-link underline-from-center" href="#contact">Contact</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="box-header">
+                    <div class="header-image">
+            
                     </div>
                 </div>
-                <ul class="my-navbar-nav">
-                    <li class="my-nav-item active">
-                        <a class="my-nav-link underline-from-center" href="#">Home</a>
-                    <li class="my-nav-item">
-                        <a class="my-nav-link underline-from-center" href="#about-me">About me</a>
-                    </li>
-                    <li class="my-nav-item">
-                        <a class="my-nav-link underline-from-center" href="#projects">Projects</a>
-                    </li>
-                    <li class="my-nav-item">
-                        <a class="my-nav-link underline-from-center" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
-            <div class="box-header">
-                <div class="header-image">
-        
+                <div class="header-over-text">
+                    <div class="image-header">
+                        <img src="./img/content/img_logo_header_merged.png" alt="">
+                    </div>
                 </div>
-            </div>
-            <div class="header-over-text">
-                <h1>Hi, I'm Michael<br>Junior Front-End Developer</h1>
-            </div>
         </header>
         <main class="box-main">
             <div id="projects" class="box-projects">
                 <h2>MY PROJECTS</h2>
-                <div class="underline"></div>
                 <div class="projects-grid">
                     <div class="project1-wrapper">
                         <div class="project1">
@@ -86,9 +85,11 @@
                                 <img src="./img/content/my_budget_app.png" alt="project2">
                             </div>
                             <div class="content-details fadeIn-bottom">
+                                <p>"Budget App"</p>
                                 <a href="https://mikegoluch.github.io/my-budget-app/" target="_blank"><i class="far fa-play-circle play-left"></i></a>
                                 <a href="https://github.com/MikeGoluch/my-budget-app"><i class="fas fa-code-branch github-right"></i></a>
-                                <p>In progress...</p>
+                                <p>Technologies used:</p>
+                                <p>Html, Css/Sass, Js, Webpack</p>
                             </div>
                         </div>
                     </div>
@@ -107,9 +108,18 @@
                     </div>
                 </div>
             </div>
+        </main>
+        <footer class="box-footer">
             <div id="contact" class="box-contact">
-                <h2>Contact me</h2>
-                <div class="underline"></div>
+                <h2>Contact</h2>
+                <div class="social-media">
+                    <a href="https://www.linkedin.com/in/micha%C5%82-g-044626162/" target="_blank" class="linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://github.com/MikeGoluch" target="_blank" class="github">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
                 <p>Feel free to contact me</p>
                 <form action="https://formspree.io/goluch.michal89@gmail.com" method="POST">
                     <div class="form-name">
@@ -129,20 +139,11 @@
                     </div>
                 </form>
             </div>
-        </main>
-        <footer class="box-footer">
-            <div>
-                <a href="https://www.linkedin.com/in/micha%C5%82-g-044626162/" class="linkedin">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
-                <a href="https://github.com/MikeGoluch" class="github">
-                    <span class="devicons devicons-github_badge"></span>
-                </a>
+            <div class="copyrights">
+                <p>Created with passion.</p>
+                <p>MG &copy 2020</p>
             </div>
-            <div>FAMG &copy 2018</div>
         </footer>
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <!-- <script src="./js/index.js"></script> -->
 </body>
 </html>
