@@ -1,17 +1,36 @@
 //properties
 
-
-@mixin p-margin-lheight-wspacing-lspacing {
+@mixin p-contact-style {
+    margin: 2% 0;
     padding: 2.5% 0;
     line-height: 1.5;
     word-spacing: 5px;
     letter-spacing: 1px;
 }
 
-@mixin h2-fsize-lheight-margin {
+@mixin h2-projects-style {
+    color: #000000;
+    margin: 3% 0;
     font-size: 1.5rem;
     line-height: 1.15;
     padding: 20px 0;
     text-decoration: underline;
     text-decoration-color: #dc0210;
+}
+
+@mixin h2-contact-style {
+    color: #ffffff;
+    margin: 3% 0;
+    font-size: 1.5rem;
+    line-height: 1.15;
+    padding: 20px 0;
+    text-decoration: underline;
+    text-decoration-color: #dc0210;
+}
+
+@mixin font-properties {
+    font-family: 'Source Code Pro', monospace;
+    src: url('../fonts/SourceCodePro-Regular.ttf') format('ttf');
+    font-weight: normal;
+    font-style: normal;
 }

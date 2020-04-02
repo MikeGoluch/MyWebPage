@@ -1,17 +1,8 @@
-/* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
-*/
-
 @import '_partials';
 
 @font-face {
-    font-family: 'Source Code Pro', monospace;
-    src: url('../fonts/SourceCodePro-Regular.ttf') format('ttf');
-    font-weight: normal;
-    font-style: normal;
+    @include font-properties;
 }
-// @import url(//db.onlinewebfonts.com/c/631ff3be8e08ee5f7db026efc6a12ca1?family=FF+Magda+Clean+Mono);
 
 //CSS reset from meyerweb.com
 
@@ -42,7 +33,7 @@ footer, header, hgroup, menu, nav, section {
 }
 body {
 	line-height: 1;
-    font-family:'Source Code Pro', monospace;
+    font-family: $font-family;
     height: 100%;
 }
 ol, ul {
@@ -84,7 +75,6 @@ html {
         .section-left {
             transform: translateX(-100%);
             transition: all 0.3s 1s ease-out;
-
         }
         .section-right {
             transform: translateX(100%);
@@ -209,7 +199,6 @@ header {
 }
 
 .my-navbar {
-    // background-color: white;
     min-height: 80px;
     position: fixed;
     top: 0;
@@ -273,7 +262,7 @@ header {
             margin: 5px;
             font-size: 1.5rem;
             &:hover {
-                transform: scale(1.2);
+                transform: scale(1.1);
             }
         }
     }
@@ -283,9 +272,7 @@ header {
 }
 
 .box-header {
-    // margin-top: 80px;
     .header-image {
-        margin-bottom: -4px;
         background-image: linear-gradient(#000000, #000000), url('../img/content/header_1200_600.jpg');
         background-position: center;
         background-repeat: no-repeat;
@@ -305,19 +292,6 @@ header {
         left: 50%;
         transform: translate(-50%,-50%);
     }
-    h1 {
-        // @include h2-fsize-lheight-margin;
-        text-transform: uppercase;
-        color: #ffffff;
-        background-color: rgba(0,0,0,.7);
-        border: 1px solid #ffffff;
-        padding: 5px;
-        position: absolute;
-        top: 60%;
-        left: 50%;
-        transform: translate(-50%,-50%);
-        text-align: center;
-    }
 }
 
 .box-projects {
@@ -328,24 +302,19 @@ header {
     background-repeat: no-repeat;
     background-size: cover;
     background-blend-mode: saturation;
-    // background-color: $about-projects-bg-color;
     text-align: center;
     h2 {
-        @include h2-fsize-lheight-margin;
+        @include h2-projects-style;
     }
     .projects-grid {
         display: grid;
         margin: 5%;
-        min-width: 0;
-        min-height: 0;
-        // grid-template-rows: repeat(3, 0.7fr);
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         grid-column-gap: 25px;
         grid-row-gap: 15px;
         .project1-wrapper,
         .project2-wrapper,
         .project3-wrapper {
-            min-width: 0;
             overflow: hidden;
             position: relative;
             height: 300px;
@@ -386,7 +355,6 @@ header {
                         word-spacing: 5px;
                         letter-spacing: 1px;
                         font-weight: 500;
-                        // @include p-margin-lheight-wspacing-lspacing;
                     }
                     .github-right,
                     .play-left {
@@ -428,9 +396,8 @@ header {
     }
 }
 
-
 .box-footer {
-    background-color: $body-footer-bg-color;
+    background-color: $footer-bg-color;
     height: 100vh;
     display: grid;
     .box-contact {
@@ -438,24 +405,17 @@ header {
         color: #ffffff;
         text-align: center;
         p {
-            @include p-margin-lheight-wspacing-lspacing;
-            margin: 2% 0;
+            @include p-contact-style;
         }
         h2 {
-            @include h2-fsize-lheight-margin;
-            color: #ffffff;
-            margin: 3% 0;
-
+            @include h2-contact-style;
+            
         }
         form {
             margin: 0 10%;
-            div {
-                // margin: 0 5% 5% 5%;
-
-            }
             div input,
             div textarea {
-                font-family:'Source Code Pro', monospace;
+                font-family: $font-family;
                 margin: 1% auto;
                 border: 1px solid #dc0210;
             }
@@ -507,7 +467,6 @@ header {
             .form-send {
                 grid-area: d;
             }
-            // height: 100vh;
             display: grid;
             grid-column-gap: 10px;
             grid-row-gap: 30px;
@@ -517,24 +476,12 @@ header {
             "a b"
             "c c"
             "d d";
-
         }
-        // padding: 2rem;
-        // background-color: $contact-skills-bg-color;
-        
-        
-        form div {
-        }
-        
     }
     .social-media {
-        // display: grid;
-        // justify-items: center;
-        // align-items: center;
         text-align: center;
         color: #dc0210;
         margin: 2% 0;
-        // margin: 0.5% 0;
         a {
             text-decoration: none;
             i[class*='fa-'] {
@@ -556,10 +503,6 @@ header {
     }
 }
     
-    // min-height: 100px;
-
-
-
 //Animation
 
 @keyframes appear {
@@ -591,11 +534,6 @@ header {
 //Small devices
 
 @media only screen and (min-width: 600px) {
-    .header-over-text {
-        h1 {
-            font-size: 1.25rem;
-        }
-    }
     .nav-is-open {
         .my-navbar-nav {
             .my-nav-link {

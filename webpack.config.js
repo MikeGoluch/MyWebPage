@@ -1,14 +1,6 @@
 const path = require('path');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-// const FullPage = require('fullpage.js');
-// const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-// import fullpage from 'fullpage.js';
-
-// var fullPageInstance = new fullpage('#myFullpage', {
-//     navigation: true,
-//     sectionsColor:['#ff5f45', '#0798ec', '#fc6c7c', 'grey']
-// });
 
 module.exports = {
     entry: ['babel-polyfill', './src/js/index.js'],
@@ -21,22 +13,11 @@ module.exports = {
     },
     module: {
         rules: [
-            // {
-            //     test: /\.css$/,
-            //     exclude: /node_modules/,
-            //     use: [
-            //         {
-            //             loader: MiniCssExtractPlugin.loader,
-            //         },
-            //         { loader: 'css-loader', options: { url: true } }
-            //     ]
-            // },
             {
                 test: /\.s[ac]ss$/i,
                 exclude: /node_modules/,
                 use: [
                     "style-loader",
-                    // MiniCssExtractPlugin.loader,
                     "css-loader",
                     "sass-loader"
                   ],
@@ -81,12 +62,5 @@ module.exports = {
                 template: './src/index.html'
             }
         ),
-        // new FullPage('#myFullpage', {
-        //     navigation: true,
-        //     sectionsColor:['#ff5f45', '#0798ec', '#fc6c7c', 'grey']
-        // })
-        // new MiniCssExtractPlugin({
-        //     filename: './style.css'
-        // })
     ]
 };
